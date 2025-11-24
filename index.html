@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>【あなたの名前】 - Wikipedia風プロフィール</title>
+    <meta name="description" content="【あなたの名前】のプロフィール、経歴、作品一覧を紹介するページです。">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="【あなたの名前】 - Wikipedia風プロフィール">
+    <meta property="og:description" content="【あなたの名前】の公式プロフィール。経歴や作品、外部リンクを掲載。">
+    <meta property="og:type" content="profile">
+    <meta property="og:image" content="./assets/profile.jpg">
+    <meta property="og:url" content="./">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- 構造化データ (Person) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "【あなたの名前】",
+      "url": "./",
+      "jobTitle": "【職業・肩書き】",
+      "image": "./assets/profile.jpg",
+      "sameAs": ["https://twitter.com/【ID】","https://github.com/【ID】"]
+    }
+    </script>
+</head>
+<body>
+
+<div class="mw-page">
+    <!-- ヘッダ（トップバー） -->
+    <header class="mw-header" role="banner">
+        <div class="mw-header-inner">
+            <button id="mw-toggle" class="mw-toggle" aria-label="メニューを開く">☰</button>
+            <a href="./" class="mw-site-name">サンプル百科事典</a>
+
+            <form class="mw-search" action="./" method="get" role="search" aria-label="検索">
+                <input type="search" name="q" placeholder="検索" aria-label="検索フォーム">
+                <button type="submit">検索</button>
+            </form>
+
+            <nav class="mw-toplinks" aria-label="ユーザー操作">
+                <a href="#">トーク</a>
+                <a href="#">投稿</a>
+                <a href="#">ログイン</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="mw-body">
+        <!-- 左サイドバー -->
+        <aside class="mw-sidebar" role="navigation" aria-label="サイドバー">
+            <div class="mw-sidebar-inner">
+                <div class="mw-logo">
+                    <!-- ロゴ: assets/logo.png に置き換えてください -->
+                    <div class="mw-logo-mark">W</div>
+                    <div class="mw-logo-text">サンプル百科事典</div>
+                </div>
+
+                <nav class="mw-nav-links" aria-label="主要ページ">
+                    <ul>
+                        <li><a href="#">メインページ</a></li>
+                        <li><a href="#toc">目次</a></li>
+                        <li><a href="#biography">経歴</a></li>
+                        <li><a href="#works">作品リスト</a></li>
+                        <li><a href="#external-links">外部リンク</a></li>
+                    </ul>
+                </nav>
+
+                <div class="mw-sidebar-tools">
+                    <h3>ツール</h3>
+                    <ul>
+                        <li><a href="#">リンク元</a></li>
+                        <li><a href="#">ファイルをアップロード</a></li>
+                        <li><a href="#">特別ページ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- メイン領域：本文 + 右インフォボックス -->
+        <main class="mw-content" role="main">
+            <article class="mw-article">
+                <header class="article-header">
+                    <h1 class="firstHeading">【あなたの名前】</h1>
+                    <div class="siteSub">出典: フリー百科事典『ウィキペディア（Wikipedia）』</div>
+                </header>
+
+                <!-- リード文 -->
+                <p class="lead"><strong>【あなたの名前】</strong>（読み：やまだ たろう、1990年 - ）は、日本のエンジニア・デザイナーである。主にWeb開発やオープンソース活動に従事している。<sup class="reference-link"><a href="#ref1">[1]</a></sup></p>
+
+                <!-- 目次 -->
+                <nav id="toc" class="toc" aria-label="目次">
+                    <div class="toctitle"><h2>目次</h2><span class="toctoggle">[<a href="#">非表示</a>]</span></div>
+                    <ul>
+                        <li><a href="#biography">1 経歴</a></li>
+                        <li><a href="#personal">2 人物・エピソード</a></li>
+                        <li><a href="#works">3 主な作品・実績</a></li>
+                        <li><a href="#references">4 脚注</a></li>
+                        <li><a href="#external-links">5 外部リンク</a></li>
+                    </ul>
+                </nav>
+
+                <!-- 本文各セクション -->
+                <section id="biography">
+                    <h2>経歴</h2>
+                    <p>ここに経歴を記述します。大学・職歴などを時系列でまとめます。</p>
+                </section>
+
+                <section id="personal">
+                    <h2>人物・エピソード</h2>
+                    <p>趣味やパーソナルな情報、エピソードを記載します。<sup class="reference-link"><a href="#ref2">[2]</a></sup></p>
+                </section>
+
+                <section id="works">
+                    <h2>出演・作品</h2>
+                    <h3 id="works-web">Webサービス</h3>
+                    <ul>
+                        <li><strong>サービスA</strong> - 説明</li>
+                    </ul>
+
+                    <h3 id="works-oss">OSS活動</h3>
+                    <ul>
+                        <li><a href="#">Library-Name</a> - 説明</li>
+                    </ul>
+                </section>
+
+                <section id="references">
+                    <h2>脚注</h2>
+                    <ol class="references">
+                        <li id="ref1">^ <a href="#">インタビュー記事</a></li>
+                        <li id="ref2">^ <a href="#">本人の発言</a></li>
+                    </ol>
+                </section>
+
+                <section id="external-links">
+                    <h2>外部リンク</h2>
+                    <ul>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </section>
+
+                <footer class="article-footer">
+                    <p>ライセンス: CC BY-SA（サンプル）</p>
+                </footer>
+            </article>
+
+            <!-- 右側のInfoboxをメインの横に表示（モバイルでは下に回る） -->
+            <aside class="mw-infobox" role="complementary" aria-label="情報ボックス">
+                <div class="infobox-header">【あなたの名前】</div>
+                <div class="infobox-image"><img src="./assets/profile.jpg" alt="【あなたの名前】の写真" onerror="this.style.display='none'"></div>
+                <table class="infobox-table">
+                    <tr><th>生誕</th><td>1990年1月1日<br>出身地：日本</td></tr>
+                    <tr><th>職業</th><td>ソフトウェアエンジニア</td></tr>
+                    <tr><th>活動期間</th><td>2013年 -</td></tr>
+                    <tr><th>公式サイト</th><td><a href="#">公式サイト</a></td></tr>
+                </table>
+            </aside>
+        </main>
+    </div>
+
+</div>
+
+<script>
+// ハンバーガーメニューとTOCトグルの簡易スクリプト
+(function(){
+    const btn = document.getElementById('mw-toggle');
+    btn.addEventListener('click', ()=> document.body.classList.toggle('mw-menu-open'));
+
+    // TOC 非表示トグル
+    document.querySelectorAll('.toctoggle a').forEach(a=>{
+        a.addEventListener('click', (e)=>{
+            e.preventDefault();
+            const toc = document.getElementById('toc');
+            if(!toc) return;
+            toc.classList.toggle('collapsed');
+        });
+    });
+})();
+</script>
+
+</body>
+</html>

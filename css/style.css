@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+/* --- 基本設定 --- */
+:root{
+  --bg: #ffffff;
+  --page-max: 1100px;
+  --text: #202122;
+  --muted: #6a6f73;
+  --link: #3366cc;
+  --link-visited: #0b3d91;
+  --border: #dfe1e4;
+  --sidebar-w: 240px;
+  --infobox-w: 300px;
+  --gap: 24px;
+  font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+}
+*{box-sizing:border-box}
+html,body{height:100%;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--link); text-decoration:none}
+a:visited{color:var(--link-visited)}
+
+/* --- Header (top bar) --- */
+.mw-header{background:#fff; border-bottom:1px solid var(--border); position:sticky; top:0; z-index:40}
+.mw-header-inner{max-width:var(--page-max); margin:0 auto; display:flex; align-items:center; gap:12px; padding:10px 16px}
+.mw-toggle{display:none; background:transparent; border:0; font-size:20px; cursor:pointer}
+.mw-site-name{font-weight:700; color:var(--text); margin-right:auto}
+.mw-search{display:flex; gap:6px}
+.mw-search input{padding:6px 8px; border:1px solid var(--border); border-radius:2px}
+.mw-search button{padding:6px 8px; border:1px solid var(--border); background:#f5f5f5; cursor:pointer}
+.mw-toplinks a{margin-left:10px; color:var(--muted); font-size:14px}
+
+/* --- Body layout --- */
+.mw-body{max-width:var(--page-max); margin:20px auto; display:grid; grid-template-columns: var(--sidebar-w) 1fr; gap:var(--gap); padding:0 12px}
+
+/* Sidebar */
+.mw-sidebar{background:#fff; border:1px solid var(--border); padding:12px}
+.mw-logo{display:flex; align-items:center; gap:8px; margin-bottom:8px}
+.mw-logo-mark{width:44px; height:44px; background:#f2f2f2; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:18px}
+.mw-logo-text{font-weight:600}
+.mw-nav-links ul{list-style:none; margin:0; padding:0}
+.mw-nav-links li{margin:6px 0}
+.mw-nav-links a{display:block; padding:6px 8px; border-radius:2px}
+.mw-sidebar-tools h3{margin:12px 0 6px 0; font-size:14px}
+
+/* Main content and infobox - use a grid so infobox sits to the right */
+.mw-content{display:grid; grid-template-columns: 1fr var(--infobox-w); gap:var(--gap)}
+.mw-article{background:#fff; border:1px solid var(--border); padding:18px}
+.article-header .firstHeading{margin:0 0 6px; font-size:28px}
+.siteSub{color:var(--muted); margin-bottom:12px}
+.lead{font-size:16px; color:var(--muted)}
+
+/* TOC */
+.toc{border:1px solid var(--border); background:#fff; padding:10px; margin:14px 0}
+.toc .toctitle{display:flex; justify-content:space-between; align-items:center}
+.toc ul{list-style:none; padding-left:0; margin:8px 0 0 0}
+.toc li{margin:4px 0}
+.toc a{color:var(--link)}
+.toc.collapsed ul{display:none}
+
+/* Article sections */
+.mw-article h2{font-size:18px; margin-top:18px}
+.mw-article h3{font-size:16px}
+.mw-article p{line-height:1.7}
+.references{padding-left:18px}
+.reference-link a{color:var(--link)}
+
+/* Infobox */
+.mw-infobox{background:#fbfbfb; border:1px solid #c9ccd1; padding:0}
+.mw-infobox .infobox-header{background:#efefef; padding:10px; font-weight:700; border-bottom:1px solid #d6d8db}
+.mw-infobox .infobox-image img{width:100%; display:block}
+.infobox-table{width:100%; border-collapse:collapse}
+.infobox-table th{padding:8px; text-align:left; vertical-align:top; color:var(--muted); width:40%}
+.infobox-table td{padding:8px}
+
+/* Footer */
+.article-footer{margin-top:18px; color:var(--muted); font-size:13px}
+
+/* Mobile responsive */
+@media (max-width: 900px){
+  .mw-header-inner{padding:8px}
+  .mw-toggle{display:inline-block}
+  .mw-body{grid-template-columns: 1fr;}
+  .mw-content{grid-template-columns: 1fr;}
+  .mw-infobox{order:2}
+  .mw-sidebar{position:fixed; top:56px; left:0; width:260px; height:calc(100% - 56px); transform:translateX(-110%); transition:transform .22s ease; z-index:60; box-shadow:2px 0 12px rgba(0,0,0,0.12)}
+  body.mw-menu-open .mw-sidebar{transform:translateX(0)}
+  .mw-sidebar{padding:16px}
+  .mw-sidebar-tools{display:block}
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0b0b0c; --text:#e6e6e6; --border:#232425; --muted:#9aa0a6}
+  body{background:var(--bg); color:var(--text)}
+  .mw-header, .mw-sidebar, .mw-article, .mw-infobox{background:#0f1112; border-color:var(--border)}
+  a{opacity:0.95}
+}
